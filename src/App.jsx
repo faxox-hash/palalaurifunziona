@@ -743,6 +743,7 @@ export default function PalaLauriLabPreviewEnvironment() {
       const nextItems = Array.isArray(data?.items) ? data.items : [];
       if (nextItems.length) {
         setItems(nextItems);
+        focusFirstItem(nextItems);
         setSavedMessage(`Archivio iniziale caricato: ${nextItems.length} documenti.`);
         setSection('archive');
       } else {
@@ -816,6 +817,18 @@ export default function PalaLauriLabPreviewEnvironment() {
   const pendingCodes = useMemo(() => items.filter((item) => !item.code), [items]);
   const completionCount = items.filter((item) => item.code).length;
   const highPriorityItems = items.filter((item) => item.priority === 'alta').length;
+
+  function focusFirstItem(list) {
+    const first = Array.isArray(list) && list.length ? list[0] : null;
+    setSelectedResult(first);
+    setPreviewItem(first);
+    setEditorDraft(first ? { ...first } : null);
+  }
+
+  useEffect(() => {
+    if (previewItem || !items.length) return;
+    focusFirstItem(items);
+  }, [items, previewItem]);
 
   function pushHistory(action, item, details = '') {
     const entry = {
@@ -985,9 +998,7 @@ export default function PalaLauriLabPreviewEnvironment() {
         setItems(nextItems);
         setHistory(nextHistory);
         setLogoSrc(parsed.logoSrc || null);
-        setSelectedResult(null);
-        setPreviewItem(null);
-        setEditorDraft(null);
+        focusFirstItem(nextItems);
         setSavedMessage('Import archivio completato con successo.');
       } catch {
         setSavedMessage('Import non riuscito: file non valido.');

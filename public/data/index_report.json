@@ -1,8 +1,8 @@
 {
-  "inputDirectory": "/mnt/data/palalaurilab-archive-ready/input_documents",
-  "outputDirectory": "/mnt/data/palalaurilab-archive-ready/public/invoices",
-  "generatedAt": "2026-04-02T08:16:25",
-  "totalRows": 0,
-  "totalDocuments": 0,
+  "inputDirectory": "C:\\Users\\UTENTE\\Downloads\\palalaurilab-archive-ready (1)\\palalaurilab-archive-ready\\input_documents",
+  "outputDirectory": "C:\\Users\\UTENTE\\Downloads\\palalaurilab-archive-ready (1)\\palalaurilab-archive-ready\\public\\invoices",
+  "generatedAt": "2026-04-02T11:11:56",
+  "totalRows": 6,
+  "totalDocuments": 6,
   "duplicatesSkipped": 0
 }

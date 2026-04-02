@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "archiveVersion": "v2-indexed",
+    "lastUpdated": "2026-04-02T08:16:25",
+    "totalRows": 0,
+    "totalDocuments": 0,
+    "suppliers": [],
+    "years": [],
+    "duplicatesSkipped": 0,
+    "generatedBy": "scripts/build_archive.py",
+    "note": "Archivio aggiornato. Per pubblicare online, esegui il deploy del progetto aggiornato."
+  },
+  "items": []
+}
